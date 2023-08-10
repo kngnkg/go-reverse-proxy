@@ -1,0 +1,40 @@
+{
+    "name": "reverse-proxy",
+    "dockerComposeFile": [
+        "../../docker-compose.yml"
+    ],
+    "service": "reverse-proxy",
+    "workspaceFolder": "/workspace/reverse-proxy",
+    "postCreateCommand": "sh ./.devcontainer/devcontainer-post-create.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash",
+                        "icon": "terminal-bash"
+                    }
+                },
+                "go.toolsManagement.checkForUpdates": "off",
+                "go.gopath": "/go",
+                "go.gocodeAutoBuild": true,
+                "go.formatTool": "gofmt",
+                "go.useLanguageServer": true,
+                "editor.formatOnSave": false,
+                "[go]": {
+                    "editor.formatOnSave": true
+                }
+            },
+            "extensions": [
+                "GitHub.copilot",
+                "oderwat.indent-rainbow",
+                "eamodio.gitlens",
+                "golang.go",
+                "ms-vscode.makefile-tools",
+                "bungcip.better-toml",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    }
+}

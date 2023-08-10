@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Attach to Server",
+            "type": "go",
+            "request": "attach",
+            "mode": "remote",
+            "remotePath": "/workspace/reverse-proxy",
+            "port": 40000,
+            "host": "localhost",
+            "showLog": true
+        }
+    ]
+}

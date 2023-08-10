@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  reverse-proxy:
+    hostname: reverse-proxy
+    build:
+      context: .
+      dockerfile: ./reverse-proxy/Dockerfile
+    volumes:
+      # .gitを含むルートディレクトリを指定する
+      - .:/workspace:cached
+    ports:
+      - "1443:443"
+      - "3000:444"
+
+  webapp:
+    hostname: webapp
+    build:
+      context: .
+      dockerfile: ./webapp/Dockerfile
+    volumes:
+      # .gitを含むルートディレクトリを指定する
+      - .:/workspace:cached
+
+  api:
+    hostname: api
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    volumes:
+      # .gitを含むルートディレクトリを指定する
+      - .:/workspace:cached
